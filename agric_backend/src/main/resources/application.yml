@@ -1,0 +1,61 @@
+spring:  
+  application:
+    name: backend 
+  jackson:
+    property-naming-strategy: SNAKE_CASE  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/agric
+    username: kerich
+    password: kerichfelix
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  # mail:
+    # host: smtp.gmail.com
+    # port: 587
+    # username: oddsstore.com@gmail.com
+    # password: ocycozudqtftvvlh
+    # properties:
+    #   mail:
+    #     smtp:
+    #       auth: true
+    #       starttls:
+    #         enable: true
+    #       ssl:
+    #         enable: false    
+  mail:
+    host: localhost
+    port: 1025
+    username: # leave empty
+    password: # leave empty
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+          ssl:
+            enable: false
+
+server:
+  port: 8080
+
+ktg:
+  secure:
+    token:
+      validity: 2800
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+app:
+  base:
+    url: http://localhost:8080

@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: ms_ps_sql_agric
+    image: postgres
+    environment:
+      POSTGRES_USER: kerich
+      POSTGRES_PASSWORD: kerichfelix
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - microservices-net
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: ms_pgadmin_agric
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-pgadmin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - 5040:80
+    networks:
+      - microservices-net
+    restart: unless-stopped
+
+  mail-dev:
+    container_name: ms_mail_agricai
+    image: maildev/maildev
+    ports:
+      - 1080:1080
+      - 1025:1025
+    networks:
+        - microservices-net  
+
+networks:
+  microservices-net:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:
+
