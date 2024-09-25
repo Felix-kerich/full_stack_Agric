@@ -16,7 +16,6 @@ import lombok.Setter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentDTO {
-
     private Integer id;
     private String email;
     private String name;
@@ -27,6 +26,8 @@ public class PaymentDTO {
     private String message;
     private String error;
     private Payment payment;
+
+    
 
     
 

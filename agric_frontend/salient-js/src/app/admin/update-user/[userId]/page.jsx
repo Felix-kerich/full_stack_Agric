@@ -41,6 +41,7 @@ function UpdateUser() {
             setError('Failed to fetch user data.');
         } finally {
             setLoading(false);
+            
         }
     };
 
