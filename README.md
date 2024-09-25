@@ -49,6 +49,6 @@ Agric AI is a comprehensive platform designed to assist farmers in identifying c
 1. Clone the repository:
    
 
-bash
+```bash
    git clone https://github.com/Felix-kerich/full_stack_Agric-springboot-Next-js-.git
    cd full_stack_Agric-springboot-Next-js-
