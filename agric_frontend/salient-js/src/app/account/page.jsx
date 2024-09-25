@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import UserService from '../../hooks/UserService';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import avatar from '../../public/avatar.png';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -82,9 +83,9 @@ const AccountPage = () => {
           </h2>
 
           <div className="flex items-center mt-4">
-            <img
-              src={profilePic}
-              alt="Profile"
+            <Image
+              src={avatar}
+              alt="Profile pic"
               className="h-24 w-24 rounded-full object-cover"
             />
           </div>
@@ -126,7 +127,12 @@ const AccountPage = () => {
 
             <div className="flex space-x-4 mt-6">
               <Link href="/make-mpesa-payment" className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Make Payment
+                Make Mpesa Payment
+              </Link>
+            </div>
+            <div className="flex space-x-4 mt-6">
+              <Link href="/make-paypal-payment" className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                Make Paypal Payment
               </Link>
             </div>
           </div>

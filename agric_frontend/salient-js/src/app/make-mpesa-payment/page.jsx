@@ -5,6 +5,7 @@ import UserService from '../../hooks/UserService'; // Adjust import according to
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import avatar from '../../public/avatar.png';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation'; // Use useRouter for navigation in Next.js
 
 const MpesaPayment = () => {
@@ -134,8 +135,8 @@ const MpesaPayment = () => {
           </h2>
 
           <div className="flex items-center mt-4">
-            <img
-              src={profilePic}
+            <Image
+              src={ avatar }
               alt="Profile"
               className="h-24 w-24 rounded-full object-cover"
             />
