@@ -1,0 +1,6 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.project.sourcePaths": [
+        "agric_frontend/salient-js/src/app/make-paypal-payment"
+    ]
+}

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: paypal-rest-api
+  jackson:
+    property-naming-strategy: SNAKE_CASE  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/paypal
+    username: kerich
+    password: kerichfelix
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update  
+paypal:
+  client-id: AblCrIBs4nr7dSmJ5eKjGce_brq4rTIhJsap1-bCvVl9gY_It3RblJy8jthHRwqSMXGhWuE2Ob2mojeX
+  client-secret: EBo5R6UrUd-azvpKR2-0oFoyj1Mv-3RAqjx0LjWtzDW2iqOj1yVzCL1sIclNDXSN8Ij722M6H9TB7D5G
+  mode: sandbox
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+server:
+  port: 8081      
+

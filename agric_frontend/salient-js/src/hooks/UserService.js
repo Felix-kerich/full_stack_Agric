@@ -160,6 +160,8 @@ class UserService {
         }
     }
 
+   
+
     static async getPayedUserDetailsById(userId) {
         const token = this.getToken();
         try {
