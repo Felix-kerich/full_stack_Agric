@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import UserService from '../../hooks/UserService';
 import { ChevronRightIcon, CameraIcon } from '@heroicons/react/20/solid'; // Added CameraIcon
 import avatar from '../../public/avatar.png';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const Profile = () => {
@@ -154,8 +155,8 @@ const Profile = () => {
           </h2>
 
           <div className="flex items-center">
-            <img
-              src={profilePic || profile?.profilePicUrl || avatar } // Fallback to a default profile pic
+            <Image
+              src={avatar} 
               alt="Profile"
               className="h-24 w-24 rounded-full object-cover"
             />

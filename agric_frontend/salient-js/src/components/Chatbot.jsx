@@ -1,5 +1,7 @@
 'use client'
 
+import avatar from '../public/avatar.png';
+import Image from 'next/image';
 import { useState, useRef } from 'react'
 import {
   FaceFrownIcon,
@@ -52,33 +54,32 @@ export default function Chatbot() {
   }
 
   return (
-    <div className="relative flex min-h-full shrink-0 justify-center md:px-12 lg:px-0">
-      <div className="flex-shrink-0">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-          className="inline-block h-10 w-10 rounded-full"
-        />
-      </div>
-      <div className="mx-auto w-full max-w-md sm:px-4 md:w-96 md:max-w-sm md:px-0">
-        <form action="#" className="relative">
+    <div className="fixed bottom-0 left-0 right-0 flex justify-center px-4 pb-4">
+      <div className="w-full max-w-3xl bg-gray-200 p-4 shadow-lg rounded-lg flex items-center space-x-4">
+        {/* User Avatar */}
+        <div className="flex-shrink-0">
+          <Image
+            alt=""
+            src={avatar}
+            className="inline-block h-10 w-10 rounded-full"
+          />
+        </div>
+
+        {/* Form Input Area */}
+        <form action="#" className="relative w-full bg-gray-100">
           <div className="overflow-hidden rounded-lg shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
-            <label htmlFor="comment" className="sr-only">
-              Add your comment
-            </label>
             <textarea
               id="comment"
               name="comment"
               rows={3}
-              placeholder="Add your comment..."
+              placeholder="Ask Anything about farming..."
               className="block w-full resize-none border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
               defaultValue={''}
               onPaste={handlePaste} // Handle paste event
             />
 
-            {/* Spacer element to match the height of the toolbar */}
+            {/* Spacer element */}
             <div aria-hidden="true" className="py-2">
-              {/* Matches height of button in toolbar (1px border + 36px content height) */}
               <div className="py-px">
                 <div className="h-9" />
               </div>
@@ -91,6 +92,7 @@ export default function Chatbot() {
             </div>
           )}
 
+          {/* Controls at Bottom */}
           <div className="absolute inset-x-0 bottom-0 flex justify-between py-2 pl-3 pr-2">
             <div className="flex items-center space-x-5">
               <div className="flex items-center">
@@ -168,12 +170,14 @@ export default function Chatbot() {
                 </Listbox>
               </div>
             </div>
+
+            {/* Submit Button */}
             <div className="flex-shrink-0">
               <button
                 type="submit"
                 className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Post
+                Ask AI
               </button>
             </div>
           </div>

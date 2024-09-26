@@ -6,6 +6,8 @@ import UserService from '../hooks/UserService';
 import Image from 'next/image';
 import logo from '../public/logo.jpg';
 import avatar from '../public/avatar.png';
+import DarkModeToggle from '../components/DarkModeToggle';
+
 
 import {
   Dialog,
@@ -172,8 +174,28 @@ export default function Dashboard() {
                       </ul>
                     </li>
                     <li className="mt-auto">
+                    <a
+                        href="/profile"
+                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white"
+                      >
+                        <Cog6ToothIcon
+                          aria-hidden="true"
+                          className="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white"
+                        />
+                        profile
+                      </a>
                       <a
-                        href="#"
+                        href="/account"
+                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white"
+                      >
+                        <Cog6ToothIcon
+                          aria-hidden="true"
+                          className="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white"
+                        />
+                        Account
+                      </a>
+                      <a
+                        href="/settings"
                         className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white"
                       >
                         <Cog6ToothIcon
@@ -246,7 +268,7 @@ export default function Dashboard() {
                           Account
                         </a>
                         <a
-                          href="#"
+                          href="/settings"
                           className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white"
                         >
                           <Cog6ToothIcon
@@ -288,6 +310,9 @@ export default function Dashboard() {
                         className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
                       />
                     </form>
+                    <div className="p-4">                      
+                      <DarkModeToggle />
+                    </div>
                     <div className="flex items-center gap-x-4 lg:gap-x-6">
                       <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
                         <span className="sr-only">View notifications</span>

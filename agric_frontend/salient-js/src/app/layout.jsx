@@ -1,40 +1,37 @@
-import { Inter, Lexend } from 'next/font/google'
-import clsx from 'clsx'
+// src/app/layout.js (or src/app/layout.jsx if using JSX)
 
-import '@/styles/tailwind.css'
-
-export const metadata = {
-  title: {
-    template: '%s - Kilimo Mshauri',
-    default: 'Kilimo Mshauri - An AI-Powered Farm Advisor for East Africa',
-  },
-  description:
-    'An innovative AI-driven platform designed to empower East African farmers with the knowledge and tools to optimize crop production.',
-}
+import { Inter, Lexend } from 'next/font/google';
+import clsx from 'clsx';
+import { DarkModeProvider } from '../context/DarkModeContext';
+import '@/styles/tailwind.css';
 
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-})
+});
 
 const lexend = Lexend({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-lexend',
-})
+});
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={clsx(
-        'h-full scroll-smooth bg-white antialiased',
+        'h-full scroll-smooth antialiased',
         inter.variable,
-        lexend.variable,
+        lexend.variable
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body className="flex h-full flex-col bg-white dark:bg-gray-900"> {/* Apply default dark mode styles */}
+        <DarkModeProvider>
+          {children}
+        </DarkModeProvider>
+      </body>
     </html>
-  )
+  );
 }
