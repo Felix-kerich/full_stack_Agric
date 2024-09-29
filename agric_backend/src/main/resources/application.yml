@@ -4,7 +4,7 @@ spring:
   jackson:
     property-naming-strategy: SNAKE_CASE  
   datasource:
-    url: jdbc:postgresql://localhost:5432/agric
+    url: jdbc:postgresql://localhost:5432/agricai
     username: kerich
     password: kerichfelix
   jpa:

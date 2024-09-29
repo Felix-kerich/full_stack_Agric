@@ -47,6 +47,7 @@ export default function Dashboard() {
     { name: 'Agricutural Articals', href: '#', icon: CalendarIcon, current: false },
     { name: 'Dairy Farming', href: '#', icon: DocumentDuplicateIcon, current: false },
     { name: 'Beef farming', href: '#', icon: ChartPieIcon, current: false },
+    { name: 'History', href: '#', icon: ChartPieIcon, current: false },
     
   ]);
 

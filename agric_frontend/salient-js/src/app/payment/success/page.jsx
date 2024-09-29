@@ -35,9 +35,10 @@ export default function PaymentSuccess() {
         alert('Payment details saved successfully.');
         router.push('/account');
         
-      } else {
-        alert('Payment not approved.');
-      }
+      } 
+      // else {
+      //   alert('Payment not approved.');
+      // }
     } catch (error) {
       console.error('Error saving payment details:', error);
     }
